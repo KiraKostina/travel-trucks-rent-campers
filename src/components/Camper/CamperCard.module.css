@@ -1,0 +1,55 @@
+.card_container {
+  display: flex;
+  gap: 24px;
+  width: 888px;
+  height: 368px;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+}
+
+.camper_photo {
+  width: 292px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.info_container {
+  width: 524px;
+}
+.name_price_favor_container {
+  display: flex;
+  justify-content: space-between;
+  width: 524px;
+  margin-bottom: 8px;
+}
+
+.camper_name {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+  margin-right: auto;
+}
+
+.camper_price {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+  margin-right: 12px;
+}
+
+.fav_icon {
+  width: 26px;
+  height: 24px;
+}
+
+.rate_icon {
+  width: 16px;
+  height: 16px;
+  fill: #ffc531;
+}

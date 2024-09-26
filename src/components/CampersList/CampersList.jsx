@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectCampers } from "../../redux/campers/selectors";
-import Camper from "../Camper/Camper";
+import CamperCard from "../Camper/CamperCard";
+import css from "./CampersList.module.css";
 
 export default function CampersList() {
   const campers = useSelector(selectCampers);
@@ -8,10 +9,10 @@ export default function CampersList() {
 
   return (
     <>
-      <ul>
+      <ul className={css.camp_list}>
         {campers.map((camper) => (
           <li key={camper.id}>
-            <Camper camper={camper} />
+            <CamperCard camper={camper} />
           </li>
         ))}
       </ul>

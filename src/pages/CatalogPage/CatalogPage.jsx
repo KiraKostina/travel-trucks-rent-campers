@@ -15,7 +15,6 @@ export default function CatalogPage() {
 
   return (
     <div>
-      <h2>Campers</h2>
       {isLoading && <Loader />}
       <CampersList />
     </div>

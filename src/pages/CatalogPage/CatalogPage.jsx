@@ -9,9 +9,9 @@ export default function CatalogPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
 
-  useEffect(() => {
-    dispatch(getCampers());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getCampers());
+  // }, [dispatch]);
 
   return (
     <div>

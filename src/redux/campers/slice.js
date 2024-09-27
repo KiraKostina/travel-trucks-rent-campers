@@ -15,6 +15,7 @@ const campersSlice = createSlice({
   initialState: {
     items: [],
     // campers: [],
+    total: 0,
     isLoading: false,
     error: null,
   },
@@ -22,7 +23,12 @@ const campersSlice = createSlice({
     builder
       .addCase(getCampers.pending, handlePending)
       .addCase(getCampers.fulfilled, (state, action) => {
-        state.items = action.payload;
+        const newItems = action.payload.items.filter(
+          (newItem) =>
+            !state.items.some((existingItem) => existingItem.id === newItem.id)
+        );
+        state.items = [...state.items, ...newItems];
+        state.total = action.payload.total;
         state.isLoading = false;
       })
       .addCase(getCampers.rejected, handleRejected)

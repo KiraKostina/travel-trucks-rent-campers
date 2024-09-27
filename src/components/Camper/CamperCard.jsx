@@ -50,9 +50,14 @@ export default function CamperCard({ camper }) {
   const handleDetail = () => {
     navigate("/catalog/:id");
   };
-
-  const reversedLocation = location.split(", ").reverse().join(", ");
   const firstImage = gallery[0].thumb;
+  const reversedLocation = location.split(", ").reverse().join(", ");
+  const maxLength = 62;
+  function truncateTextToWord(text, maxLength) {
+    if (text.length <= maxLength) return text;
+    const truncated = text.slice(0, maxLength);
+    return truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
+  }
 
   return (
     <div>
@@ -70,16 +75,29 @@ export default function CamperCard({ camper }) {
               <use xlinkHref={`${sprite}#icon-Property-heart`}></use>
             </svg>
           </div>
-          <svg className={css.rate_icon}>
-            <use xlinkHref={`${sprite}#icon-Rating`}></use>
-          </svg>
-          {rating}
-          <p>({reviews.length} Reviews)</p>
-          <p>{reversedLocation}</p>
-          <p>{description}</p>
+          <div className={css.rate_locate_container}>
+            <div className={css.rate_part}>
+              <svg className={css.rate_icon}>
+                <use xlinkHref={`${sprite}#icon-Rating`}></use>
+              </svg>
+              <p>
+                {rating}({reviews.length} Reviews)
+              </p>
+            </div>
+            <div className={css.locate_part}>
+              <svg className={css.map_icon}>
+                <use xlinkHref={`${sprite}#icon-Map`}></use>
+              </svg>
+              <p>{reversedLocation}</p>
+            </div>
+          </div>
+
+          <p className={css.descrip_part}>
+            {truncateTextToWord(description, maxLength)}
+          </p>
           <EquipmentsList {...features} />
 
-          <button type="button" onClick={handleDetail}>
+          <button className={css.showBbtn} type="button" onClick={handleDetail}>
             Show more
           </button>
         </div>

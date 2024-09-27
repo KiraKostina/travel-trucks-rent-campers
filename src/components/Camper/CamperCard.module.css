@@ -2,7 +2,7 @@
   display: flex;
   gap: 24px;
   width: 888px;
-  height: 368px;
+  /* height: 368px; */
   padding: 24px;
   box-sizing: border-box;
   border: 1px solid #dadde1;
@@ -13,6 +13,7 @@
   width: 292px;
   height: 320px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .info_container {
@@ -21,6 +22,7 @@
 .name_price_favor_container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 524px;
   margin-bottom: 8px;
 }
@@ -52,4 +54,55 @@
   width: 16px;
   height: 16px;
   fill: #ffc531;
+}
+
+.map_icon {
+  width: 16px;
+  height: 16px;
+}
+
+.rate_locate_container {
+  display: flex;
+  gap: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  margin-bottom: 24px;
+}
+.rate_part {
+  text-decoration: underline;
+}
+.rate_part,
+.locate_part {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.descrip_part {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 24px;
+}
+.showBbtn {
+  display: block;
+  width: 166px;
+  height: 56px;
+  padding: 16px 40px;
+  border-radius: 200px;
+  border: none;
+  background-color: var(--button);
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+  cursor: pointer;
 }

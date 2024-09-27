@@ -48,15 +48,14 @@ export default function EquipmentsList({
 
   return (
     <div>
-      {/* <h3>Equipments</h3> */}
-      <ul>
-        <li>
+      <ul className={css.equip_container}>
+        <li className={css.equip_list_item}>
           <svg className={css.icon}>
             <use xlinkHref={`${sprite}#icon-diagram`}></use>
           </svg>
           {capitalizeFirstLetter(transmission)}
         </li>
-        <li>
+        <li className={css.equip_list_item}>
           <svg className={css.icon}>
             <use xlinkHref={`${sprite}#icon-fuel-pump`}></use>
           </svg>
@@ -64,7 +63,7 @@ export default function EquipmentsList({
         </li>
 
         {AC && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-wind`}></use>
             </svg>
@@ -73,7 +72,7 @@ export default function EquipmentsList({
         )}
 
         {bathroom && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-bi_droplet`}></use>
             </svg>
@@ -82,7 +81,7 @@ export default function EquipmentsList({
         )}
 
         {kitchen && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-cup-hot`}></use>
             </svg>
@@ -91,7 +90,7 @@ export default function EquipmentsList({
         )}
 
         {TV && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-tv`}></use>
             </svg>
@@ -99,7 +98,7 @@ export default function EquipmentsList({
           </li>
         )}
         {radio && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-ui-radios`}></use>
             </svg>
@@ -108,7 +107,7 @@ export default function EquipmentsList({
         )}
 
         {refrigerator && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-tv`}></use>
             </svg>
@@ -117,7 +116,7 @@ export default function EquipmentsList({
         )}
 
         {microwave && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-tv`}></use>
             </svg>
@@ -125,7 +124,7 @@ export default function EquipmentsList({
           </li>
         )}
         {gas && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-wind`}></use>
             </svg>
@@ -133,7 +132,7 @@ export default function EquipmentsList({
           </li>
         )}
         {water && (
-          <li>
+          <li className={css.equip_list_item}>
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-bi_droplet`}></use>
             </svg>

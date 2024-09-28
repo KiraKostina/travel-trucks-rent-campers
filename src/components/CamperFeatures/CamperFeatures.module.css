@@ -1,3 +1,7 @@
+.block_container {
+  display: flex;
+  gap: 40px;
+}
 .feature_details_content {
   width: 631px;
   display: flex;

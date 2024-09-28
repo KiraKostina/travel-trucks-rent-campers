@@ -1,0 +1,108 @@
+.form {
+  max-width: 641px;
+  /* height: 588px; */
+  margin-top: 44px;
+  margin-bottom: 80px;
+  padding: 44px;
+  text-align: left;
+  background-color: none;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form_title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.form_text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+  margin-bottom: 24px;
+}
+.user_info_input {
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  /* width: 100%; */
+  max-height: 60px;
+  background-color: #f7f7f7;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  white-space: nowrap;
+  outline: none;
+  box-sizing: border-box;
+  width: 527px;
+}
+.user_info_input_textarea {
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  resize: none;
+  height: 118px;
+  background-color: #f7f7f7;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  outline: none;
+  margin-bottom: 24px;
+}
+.user_info_input::placeholder {
+  color: #6c717b;
+}
+
+.input_error {
+  color: #e44848;
+  border-color: #e44848;
+  margin-bottom: 4px;
+}
+
+.input_error:focus::placeholder {
+  color: #e44848;
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 1.28;
+  color: #e44848;
+}
+
+.sendBtn {
+  display: block;
+  width: 166px;
+  height: 56px;
+  padding: 16px 60px;
+  border: none;
+  border-radius: 200px;
+  color: #fff;
+  background: #e44848;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: -0.01em;
+}

@@ -1,3 +1,7 @@
+.block_container {
+  display: flex;
+  gap: 40px;
+}
 .camper_reviews {
   width: 631px;
   display: flex;

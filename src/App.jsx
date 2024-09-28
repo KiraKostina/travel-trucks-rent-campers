@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Loader from "./components/Loader/Loader";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
-
+import { Toaster } from "react-hot-toast";
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const CamperPage = lazy(() => import("./pages/CamperPage/CamperPage"));
@@ -31,6 +31,7 @@ function App() {
           </Routes>
         </Suspense>
       </SharedLayout>
+      <Toaster />
     </>
   );
 }

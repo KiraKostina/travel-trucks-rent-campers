@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectCamper } from "../../redux/campers/selectors";
+import CampervanBookingForm from "../CampervanBookingForm/CampervanBookingForm";
 import EquipmentsList from "../Equipments/EquipmentsList";
 import css from "./CamperFeatures.module.css";
 
@@ -43,35 +44,38 @@ export default function CamperFeatures() {
   }
   return (
     <div>
-      <div className={css.feature_details_content}>
-        <EquipmentsList {...features} />
-        <h3 className={css.details_title}>Vehicle Details</h3>
-        <ul className={css.details_list}>
-          <li className={css.details_list_item}>
-            <p>Form</p>
-            <p>{capitalizeFirstLetter(form)}</p>
-          </li>
-          <li className={css.details_list_item}>
-            <p>Length</p>
-            <p>{length}</p>
-          </li>
-          <li className={css.details_list_item}>
-            <p>Width</p>
-            <p>{width}</p>
-          </li>
-          <li className={css.details_list_item}>
-            <p>Height</p>
-            <p>{height}</p>
-          </li>
-          <li className={css.details_list_item}>
-            <p>Tank</p>
-            <p>{tank}</p>
-          </li>
-          <li className={css.details_list_item}>
-            <p>Consumption</p>
-            <p>{consumption}</p>
-          </li>
-        </ul>
+      <div className={css.block_container}>
+        <div className={css.feature_details_content}>
+          <EquipmentsList {...features} />
+          <h3 className={css.details_title}>Vehicle Details</h3>
+          <ul className={css.details_list}>
+            <li className={css.details_list_item}>
+              <p>Form</p>
+              <p>{capitalizeFirstLetter(form)}</p>
+            </li>
+            <li className={css.details_list_item}>
+              <p>Length</p>
+              <p>{length}</p>
+            </li>
+            <li className={css.details_list_item}>
+              <p>Width</p>
+              <p>{width}</p>
+            </li>
+            <li className={css.details_list_item}>
+              <p>Height</p>
+              <p>{height}</p>
+            </li>
+            <li className={css.details_list_item}>
+              <p>Tank</p>
+              <p>{tank}</p>
+            </li>
+            <li className={css.details_list_item}>
+              <p>Consumption</p>
+              <p>{consumption}</p>
+            </li>
+          </ul>
+        </div>
+        <CampervanBookingForm />
       </div>
     </div>
   );

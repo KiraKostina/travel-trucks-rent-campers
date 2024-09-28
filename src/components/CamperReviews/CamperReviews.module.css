@@ -1,0 +1,61 @@
+.camper_reviews {
+  width: 631px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-top: 56px;
+  box-sizing: border-box;
+  padding-bottom: 80px;
+}
+
+.reviewer_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ava_name_container {
+  display: flex;
+  gap: 16px;
+}
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #f2f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #e44848;
+}
+.reviewer_name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
+
+.reviewer_rating {
+  display: flex;
+  align-items: center;
+}
+
+.star_icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.review_comment {
+  margin-top: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+}

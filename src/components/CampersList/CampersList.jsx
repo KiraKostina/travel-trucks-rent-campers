@@ -9,6 +9,7 @@ import {
 import CamperCard from "../Camper/CamperCard";
 import css from "./CampersList.module.css";
 import Loader from "../Loader/Loader";
+import { selectFilters } from "../../redux/filters/selectors";
 
 export default function CampersList() {
   const dispatch = useDispatch();
@@ -17,13 +18,14 @@ export default function CampersList() {
   const isLoading = useSelector(selectIsLoading);
 
   const totalCampers = useSelector(selectTotalCampers);
+  const filters = useSelector(selectFilters);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
 
   useEffect(() => {
-    dispatch(getCampers({ page: currentPage, limit: itemsPerPage }));
-  }, [dispatch, currentPage, itemsPerPage]);
-
+    dispatch(getCampers({ filters, page: currentPage, limit: itemsPerPage }));
+  }, [dispatch, currentPage, filters]);
+  // itemsPerPage,
   // const totalPages = Math.ceil(totalCampers / itemsPerPage);
   const canLoadMore = campers.length < totalCampers;
 
@@ -35,23 +37,25 @@ export default function CampersList() {
 
   return (
     <>
-      <ul className={css.camp_list}>
-        {campers.map((camper) => (
-          <li key={camper.id}>
-            <CamperCard camper={camper} />
-          </li>
-        ))}
-      </ul>
-      {isLoading && <Loader />}
-      {canLoadMore && !isLoading && (
-        <button
-          onClick={handleLoadMore}
-          className={css.load_more_button}
-          disabled={isLoading}
-        >
-          Load more
-        </button>
-      )}
+      <div className={css.camperlist_container}>
+        <ul className={css.camp_list}>
+          {campers.map((camper) => (
+            <li key={camper.id}>
+              <CamperCard camper={camper} />
+            </li>
+          ))}
+        </ul>
+        {isLoading && <Loader />}
+        {canLoadMore && !isLoading && (
+          <button
+            onClick={handleLoadMore}
+            className={css.load_more_button}
+            disabled={isLoading}
+          >
+            Load more
+          </button>
+        )}
+      </div>
     </>
   );
 }

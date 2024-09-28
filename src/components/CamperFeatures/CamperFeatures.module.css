@@ -1,0 +1,36 @@
+.feature_details_content {
+  width: 631px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 76px; */
+  padding: 44px 52px;
+  box-sizing: border-box;
+}
+
+.details_title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
+  margin-top: 76px;
+  margin-bottom: 24px;
+}
+
+.details_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
+
+.details_list_item {
+  display: flex;
+  justify-content: space-between;
+}

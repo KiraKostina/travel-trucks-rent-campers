@@ -48,7 +48,7 @@ export default function CamperCard({ camper }) {
 
   const navigate = useNavigate();
   const handleDetail = () => {
-    navigate("/catalog/:id");
+    navigate(`/catalog/${id}`);
   };
   const firstImage = gallery[0].thumb;
   const reversedLocation = location.split(", ").reverse().join(", ");

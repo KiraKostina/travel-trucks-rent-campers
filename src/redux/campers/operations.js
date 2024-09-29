@@ -17,7 +17,7 @@ export const getCampers = createAsyncThunk(
       if (vehichleTypeFilter) params.form = vehichleTypeFilter;
 
       const response = await axios.get("/campers", { params });
-      console.log("Response data:", response.data);
+      // console.log("Response data:", response.data);
       return response.data;
 
       // return {

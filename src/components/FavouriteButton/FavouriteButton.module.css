@@ -1,0 +1,13 @@
+.fav_icon {
+  width: 26px;
+  height: 24px;
+  cursor: pointer;
+  fill: #101828;
+}
+
+.fav_icon_active {
+  width: 26px;
+  height: 24px;
+  stroke: #e44848;
+  fill: #e44848;
+}

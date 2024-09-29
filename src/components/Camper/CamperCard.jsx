@@ -2,8 +2,12 @@ import EquipmentsList from "../Equipments/EquipmentsList";
 import { useNavigate } from "react-router-dom";
 import sprite from "../../img/symbol-defs.svg";
 import css from "./CamperCard.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavourites } from "../../redux/favourites/selectors";
+import { toggleFavourite } from "../../redux/favourites/slice";
+import FavouriteButton from "../FavouriteButton/FavouriteButton";
 
-export default function CamperCard({ camper }) {
+export default function CamperCard({ camper, camperId }) {
   const {
     id,
     name,
@@ -40,6 +44,14 @@ export default function CamperCard({ camper }) {
     water,
   };
 
+  const dispatch = useDispatch();
+  const favourites = useSelector(selectFavourites);
+  const isFavourite = favourites.includes(camperId);
+
+  const handleFavouriteClick = () => {
+    dispatch(toggleFavourite(camperId));
+  };
+
   const navigate = useNavigate();
   const handleDetail = () => {
     navigate(`/catalog/${id}`);
@@ -65,9 +77,7 @@ export default function CamperCard({ camper }) {
           <div className={css.name_price_favor_container}>
             <h2 className={css.camper_name}>{name}</h2>
             <p className={css.camper_price}>€{price}.00</p>
-            <svg className={css.fav_icon}>
-              <use xlinkHref={`${sprite}#icon-Property-heart`}></use>
-            </svg>
+            <FavouriteButton camperId={id} />
           </div>
           <div className={css.rate_locate_container}>
             <div className={css.rate_part}>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CampersList from "../../components/CampersList/CampersList";
-import Filters from "../../components/Filters/Filters";
+
 import Loader from "../../components/Loader/Loader";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import FiltersDraft from "../../components/черновик/FiltersDraft";
+import SearchBar from "../../components/SearchBar/SearchBar.jsx";
+
 import { getCampers } from "../../redux/campers/operations";
 import {
   selectCampers,

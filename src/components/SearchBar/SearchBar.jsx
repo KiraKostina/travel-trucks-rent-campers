@@ -1,6 +1,6 @@
 import css from "./SearchBar.module.css";
 import LocationFilter from "../LocationFilter/LocationFilter";
-import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
+// import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
 import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
 import { getCampers } from "../../redux/campers/operations";
 import { useDispatch, useSelector } from "react-redux";

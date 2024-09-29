@@ -1,0 +1,33 @@
+.search_bar_panel {
+  display: flex;
+  flex-direction: column;
+  /* gap: 32px; */
+  margin-right: 64px;
+}
+
+.filter_title {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 32px;
+}
+
+.searchBbtn {
+  display: block;
+  width: 166px;
+  height: 56px;
+  padding: 16px 40px;
+  border-radius: 200px;
+  border: none;
+  background-color: var(--button);
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+  cursor: pointer;
+}

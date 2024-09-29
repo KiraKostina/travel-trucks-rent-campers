@@ -15,7 +15,7 @@ export default function CamperDetailedInfo({ camper }) {
     reviews = [],
   } = camper;
 
-  const reversedLocation = location.split(", ").reverse().join(", ");
+  // const reversedLocation = location.split(", ").reverse().join(", ");
   const getLinkClass = ({ isActive }) => {
     return clsx(css.link, isActive && css.current);
   };
@@ -39,7 +39,7 @@ export default function CamperDetailedInfo({ camper }) {
                 <svg className={css.map_icon}>
                   <use xlinkHref={`${sprite}#icon-Map`}></use>
                 </svg>
-                <p>{reversedLocation}</p>
+                <p>{location}</p>
               </div>
             </div>
             <p className={css.camper_price}>€{price}.00</p>

@@ -28,6 +28,7 @@ const campersSlice = createSlice({
             !state.items.some((existingItem) => existingItem.id === newItem.id)
         );
         state.items = [...state.items, ...newItems];
+        // [...state.items, ...newItems];
         state.total = action.payload.total;
         state.isLoading = false;
       })
@@ -39,5 +40,13 @@ const campersSlice = createSlice({
       })
       .addCase(getCamperById.rejected, handleRejected);
   },
+  reducers: {
+    resetCampers: (state) => {
+      state.items = [];
+      state.total = 0;
+    },
+  },
 });
+
+export const { resetCampers } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

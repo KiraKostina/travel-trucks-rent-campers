@@ -3,6 +3,9 @@ import * as Yup from "yup";
 import css from "./CampervanBookingForm.module.css";
 import toast from "react-hot-toast";
 import clsx from "clsx";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
 
 const validationBookingSchema = Yup.object({
   name: Yup.string().max(32, "Too Long!").required("Required"),
@@ -20,6 +23,7 @@ const handleSubmit = (values, actions) => {
 };
 
 export default function CampervanBookingForm() {
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <Formik
       initialValues={{
@@ -76,6 +80,10 @@ export default function CampervanBookingForm() {
               type="date"
               name="bookingdate"
               placeholder="Booking date*"
+            />
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
             />
             <ErrorMessage
               name="bookingdate"

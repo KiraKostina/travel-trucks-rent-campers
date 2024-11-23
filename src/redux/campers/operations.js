@@ -7,17 +7,37 @@ export const getCampers = createAsyncThunk(
   "campers/getAll",
   async ({ filters, page, limit }, thunkAPI) => {
     try {
-      const { locationFilter, vehichleTypeFilter } = filters;
+      const {
+        locationFilter,
+        vehichleTypeFilter,
+        equipment,
+        transmission,
+        engine,
+      } = filters;
+
+      const equipmentParams = Object.keys(equipment).reduce((acc, key) => {
+        if (equipment[key]) {
+          acc[key] = true; // Устанавливаем параметр в true, если фильтр активен
+        }
+        return acc;
+      }, {});
+
       const params = {
         page,
         limit,
+        ...equipmentParams,
+        locationFilter,
       };
 
       if (locationFilter) params.location = locationFilter;
       if (vehichleTypeFilter) params.form = vehichleTypeFilter;
+      if (transmission) params.transmission = transmission;
+      if (engine) params.engine = engine;
+
+      console.log("Params for request:", params); // Лог для проверки параметров
 
       const response = await axios.get("/campers", { params });
-      // console.log("Response data:", response.data);
+      console.log("Response data:", response.data); // Лог для проверки ответа
       return response.data;
 
       // return {
